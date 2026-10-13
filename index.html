@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IDK.S — ARCADE REBORN</title>
+<meta name="description" content="IDK.S — A hyper-polished micro arcade. Three games. Infinite retries. No ads. Just play.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="bg">
+  <div class="bg-grid"></div>
+  <div class="bg-orb orb-1"></div>
+  <div class="bg-orb orb-2"></div>
+  <div class="bg-orb orb-3"></div>
+</div>
+<div class="cursor-glow" id="cursorGlow"></div>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="logo" href="#">
+      <span class="logo-mark">◐</span>
+      <span class="logo-type">IDK<span>.S</span></span>
+      <span class="logo-badge">ARCADE v2.0</span>
+    </a>
+    <div class="nav-links">
+      <a href="#games">Games</a>
+      <a href="#leaderboard">Leaderboard</a>
+      <a href="#about">About</a>
+    </div>
+    <div class="nav-actions">
+      <button class="icon-btn" id="soundToggle" aria-label="Toggle sound" title="Toggle sound">♪</button>
+      <a class="btn btn-sm btn-primary" href="#games">PLAY NOW →</a>
+      <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#games">Games</a>
+    <a href="#leaderboard">Leaderboard</a>
+    <a href="#about">About</a>
+    <a class="btn btn-primary" href="#games">PLAY NOW</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="eyebrow">
+        <span class="live-dot"></span> 2,847 PLAYING NOW &nbsp;•&nbsp; NO ADS • NO LOGIN • JUST PLAY
+      </div>
+      <h1 class="hero-title">
+        <span class="line line-1">ARCADE</span>
+        <span class="line line-2">RE<span class="accent">BORN</span></span>
+        <span class="line line-3 stroke">IDK.S</span>
+      </h1>
+      <p class="hero-sub">We didn't know what to build. So we built a game site.<br>Three obsessively polished micro-games. Keyboard, mouse or thumb. Your high score lives in your browser forever.</p>
+      <div class="hero-cta">
+        <a href="#games" class="btn btn-primary btn-lg">ENTER ARCADE <span>↗</span></a>
+        <button class="btn btn-ghost btn-lg" id="randomPlay">RANDOM GAME 🎲</button>
+      </div>
+      <div class="hero-stats">
+        <div><strong id="totalPlays">0</strong><span>plays today</span></div>
+        <div><strong>3</strong><span>games</span></div>
+        <div><strong>60 FPS</strong><span>or you don't pay*</span></div>
+        <div class="fine">* it's free anyway</div>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="arcade-machine">
+        <div class="machine-top">
+          <div class="machine-screen">
+            <div class="screen-glare"></div>
+            <canvas id="heroCanvas" width="360" height="260"></canvas>
+            <div class="screen-ui">
+              <span class="screen-label">DEMO MODE • PRESS PLAY</span>
+              <span class="screen-score" id="heroScore">SCORE 00</span>
+            </div>
+          </div>
+        </div>
+        <div class="machine-deck">
+          <div class="joystick"><div class="stick"></div><div class="base"></div></div>
+          <div class="buttons">
+            <span class="arc-btn pink"></span><span class="arc-btn cyan"></span><span class="arc-btn yellow"></span>
+            <span class="arc-btn purple"></span>
+          </div>
+        </div>
+        <div class="machine-glow"></div>
+      </div>
+      <div class="hero-cards-mini">
+        <div class="mini-card">WASD / ARROWS + SPACE</div>
+        <div class="mini-card">MOBILE SWIPE & TAP</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>NO COINS NEEDED • INSERT BRAIN • HIGH SCORE OR IT DIDN'T HAPPEN • IDK.S ARCADE • NO PAY TO WIN •</span>
+    <span>NO COINS NEEDED • INSERT BRAIN • HIGH SCORE OR IT DIDN'T HAPPEN • IDK.S ARCADE • NO PAY TO WIN •</span>
+  </div>
+</section>
+
+<section id="games" class="games">
+  <div class="section-head">
+    <h2>CHOOSE YOUR <span>POISON</span></h2>
+    <p>Three games. One leaderboard. All built to be finished in 30 seconds or obsessed over for 30 minutes.</p>
+    <div class="filter-row">
+      <button class="chip active" data-filter="all">All games</button>
+      <button class="chip" data-filter="fast">⚡ Fast</button>
+      <button class="chip" data-filter="focus">◎ Focus</button>
+      <button class="chip" data-filter="chaos">☄ Chaos</button>
+    </div>
+  </div>
+
+  <div class="game-grid">
+    <!-- GAME 1 -->
+    <article class="game-card" data-game="snake" data-tags="fast focus">
+      <div class="card-media snake-media">
+        <div class="card-num">01</div>
+        <div class="snake-preview">
+          <div class="s-row"><span></span><span></span><span class="head"></span><span class="body"></span><span class="body"></span><span></span></div>
+          <div class="s-row"><span></span><span></span><span></span><span></span><span></span><span class="food"></span></div>
+        </div>
+        <div class="card-glow"></div>
+      </div>
+      <div class="card-body">
+        <div class="card-meta"><span class="tag cyan">SNAKE REWIRED</span><span class="difficulty">▮▮▮▯ HARD</span></div>
+        <h3>NEON SERPENT</h3>
+        <p>Classic snake but angry. Wraps around walls, gets faster, glows harder. Eat or be eaten (by yourself).</p>
+        <div class="card-stats">
+          <span><b id="hs-snake">0</b> best</span>
+          <span><b id="plays-snake">0</b> plays</span>
+          <span>~1–3 min</span>
+        </div>
+        <button class="btn btn-primary btn-block" data-play="snake">PLAY NEON SERPENT →</button>
+        <div class="card-controls">ARROWS / WASD • SPACE pause • R restart</div>
+      </div>
+    </article>
+
+    <!-- GAME 2 -->
+    <article class="game-card featured" data-game="blaster" data-tags="chaos fast">
+      <div class="card-media blaster-media">
+        <div class="card-num">02</div>
+        <div class="blaster-preview">
+          <div class="ship">▲</div>
+          <div class="bullet"></div><div class="bullet b2"></div>
+          <div class="enemy">▼</div><div class="enemy e2">▼</div>
+        </div>
+        <div class="badge">🔥 MOST PLAYED</div>
+        <div class="card-glow"></div>
+      </div>
+      <div class="card-body">
+        <div class="card-meta"><span class="tag pink">SHMUP</span><span class="difficulty">▮▮▮▮ CHAOS</span></div>
+        <h3>VOID BLASTERS</h3>
+        <p>Vertical hell. Dodge, shoot, survive. Boss every 20 kills. Mouse aims, keyboard kills. Phone? Thumb power.</p>
+        <div class="card-stats">
+          <span><b id="hs-blaster">0</b> best</span>
+          <span><b id="plays-blaster">0</b> plays</span>
+          <span>~2–5 min</span>
+        </div>
+        <button class="btn btn-primary btn-block" data-play="blaster">PLAY VOID BLASTERS →</button>
+        <div class="card-controls">← → / A D + SPACE • MOUSE / TOUCH to move</div>
+      </div>
+    </article>
+
+    <!-- GAME 3 -->
+    <article class="game-card" data-game="stack" data-tags="focus">
+      <div class="card-media stack-media">
+        <div class="card-num">03</div>
+        <div class="stack-preview">
+          <div class="s-block b1"></div>
+          <div class="s-block b2"></div>
+          <div class="s-block b3 moving"></div>
+        </div>
+        <div class="card-glow"></div>
+      </div>
+      <div class="card-body">
+        <div class="card-meta"><span class="tag yellow">TIMING</span><span class="difficulty">▮▮▯▯ ZEN</span></div>
+        <h3>STACK FRACTURE</h3>
+        <p>One button. Perfect timing. Stack the moving block — miss and it shatters. 8 perfects = rainbow fever.</p>
+        <div class="card-stats">
+          <span><b id="hs-stack">0</b> best</span>
+          <span><b id="plays-stack">0</b> plays</span>
+          <span>endless</span>
+        </div>
+        <button class="btn btn-primary btn-block" data-play="stack">PLAY STACK FRACTURE →</button>
+        <div class="card-controls">SPACE / CLICK / TAP to drop</div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="quote">
+  <blockquote>“I came for a placeholder domain and stayed for 45 minutes trying to beat my snake score.” — you, in 10 minutes</blockquote>
+</section>
+
+<section id="leaderboard" class="leaderboard">
+  <div class="lb-inner">
+    <div class="lb-head">
+      <h2>LOCAL <span>LEGENDS</span></h2>
+      <p>All scores saved locally. No servers. No cheating (except your friends on your laptop).</p>
+      <button class="btn btn-ghost btn-sm" id="clearScores">Clear all scores</button>
+    </div>
+    <div class="lb-grid">
+      <div class="lb-card">
+        <h4>🐍 NEON SERPENT</h4>
+        <ol id="lb-snake"><li class="empty">No scores yet — go play!</li></ol>
+      </div>
+      <div class="lb-card">
+        <h4>☄ VOID BLASTERS</h4>
+        <ol id="lb-blaster"><li class="empty">No scores yet — go play!</li></ol>
+      </div>
+      <div class="lb-card">
+        <h4>🧱 STACK FRACTURE</h4>
+        <ol id="lb-stack"><li class="empty">No scores yet — go play!</li></ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="about">
+  <div class="about-inner">
+    <div class="about-text">
+      <h2>WHAT IS IDK.S?</h2>
+      <p>It was literally called <code>-idk.s</code> because we didn't know what to put there. So we made the most fun “idk” on the internet.</p>
+      <p>No tracking. No accounts. No energy system. Open source, runs at 60fps, works offline after first load, respects <code>prefers-reduced-motion</code>.</p>
+      <ul class="about-list">
+        <li>⚡ Zero dependencies, pure vanilla JS + Canvas</li>
+        <li>🎮 Built for keyboard, mouse, and touch</li>
+        <li>🔊 Web Audio bleeps (toggle ♪)</li>
+        <li>🏆 Global-ish daily counter (fake but motivating)</li>
+      </ul>
+    </div>
+    <div class="about-card">
+      <div class="about-card-inner">
+        <div class="kbd-row"><span class="kbd">SPACE</span> shoot / drop / pause</div>
+        <div class="kbd-row"><span class="kbd">R</span> instant restart</div>
+        <div class="kbd-row"><span class="kbd">ESC</span> quit to menu</div>
+        <div class="kbd-row"><span class="kbd">M</span> mute</div>
+        <div class="dash"></div>
+        <p>Made with spite for boring placeholder sites. Fork it, remix it, beat the high score and send a screenshot.</p>
+        <a href="https://github.com/dfwunko/-idk.s" target="_blank" class="btn btn-ghost btn-sm">View source on GitHub →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span>© 2026 IDK.S ARCADE — Built in one sitting, played for hours.</span>
+    <span class="footer-links"><a href="#games">Games</a> <a href="#" id="konamiHint">???</a> <span>Press ↑↑↓↓←→←→ B A</span></span>
+  </div>
+</footer>
+
+<!-- GAME MODAL -->
+<div class="modal" id="modal" aria-hidden="true">
+  <div class="modal-backdrop" id="modalBackdrop"></div>
+  <div class="modal-inner">
+    <div class="modal-topbar">
+      <div class="modal-title">
+        <span id="modalGameName">NEON SERPENT</span>
+        <span class="modal-score" id="modalScore">SCORE 0000</span>
+        <span class="modal-best" id="modalBest">BEST 0000</span>
+      </div>
+      <div class="modal-actions">
+        <button class="icon-btn" id="modalMute" title="Mute">♪</button>
+        <button class="icon-btn" id="modalPause" title="Pause">⏸</button>
+        <button class="icon-btn" id="modalRestart" title="Restart">↻</button>
+        <button class="icon-btn close" id="modalClose" title="Close">✕</button>
+      </div>
+    </div>
+
+    <div class="game-stage">
+      <!-- SNAKE -->
+      <div class="game-view" id="view-snake">
+        <canvas id="canvas-snake" width="480" height="480"></canvas>
+        <div class="overlay" id="overlay-snake">
+          <h3>NEON SERPENT</h3>
+          <p>Eat the food. Don't hit yourself. Walls wrap.</p>
+          <button class="btn btn-primary btn-lg" data-start="snake">START GAME →</button>
+          <span class="hint">Use WASD or ARROWS • SPACE to pause</span>
+        </div>
+        <div class="touch-controls snake-touch">
+          <div class="dpad">
+            <button data-dir="up">▲</button>
+            <div class="mid"><button data-dir="left">◀</button><button data-dir="right">▶</button></div>
+            <button data-dir="down">▼</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- BLASTER -->
+      <div class="game-view" id="view-blaster">
+        <canvas id="canvas-blaster" width="480" height="640"></canvas>
+        <div class="overlay" id="overlay-blaster">
+          <h3>VOID BLASTERS</h3>
+          <p>Survive the swarm. Boss every 20 kills.</p>
+          <button class="btn btn-primary btn-lg" data-start="blaster">START GAME →</button>
+          <span class="hint">← → / A D or drag to move • SPACE to shoot</span>
+        </div>
+        <div class="touch-hint">DRAG TO MOVE • TAP/ HOLD TO SHOOT</div>
+      </div>
+
+      <!-- STACK -->
+      <div class="game-view" id="view-stack">
+        <canvas id="canvas-stack" width="480" height="640"></canvas>
+        <div class="overlay" id="overlay-stack">
+          <h3>STACK FRACTURE</h3>
+          <p>Tap perfectly. Stack forever.</p>
+          <button class="btn btn-primary btn-lg" data-start="stack">START GAME →</button>
+          <span class="hint">SPACE / CLICK / TAP when aligned</span>
+        </div>
+      </div>
+
+      <div class="pause-overlay" id="pauseOverlay">
+        <div>PAUSED</div>
+        <span>Press SPACE or click RESUME</span>
+        <button class="btn btn-primary" id="resumeBtn">RESUME</button>
+      </div>
+
+      <div class="gameover-overlay" id="gameover">
+        <div class="go-card">
+          <div class="go-label">GAME OVER</div>
+          <div class="go-score" id="goScore">0</div>
+          <div class="go-sub" id="goSub">Nice try</div>
+          <div class="go-best" id="goBest"></div>
+          <div class="go-actions">
+            <button class="btn btn-primary" id="goRestart">PLAY AGAIN →</button>
+            <button class="btn btn-ghost" id="goMenu">BACK TO ARCADE</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-foot">
+      <span id="modalHint">TIP: Hold SPACE in Void Blasters for auto-fire</span>
+      <span class="modal-foot-right">ESC to exit • R to restart</span>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="app.js"></script>
+</body>
+</html>
