@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>IDK.S — ARCADE REBORN</title>
-<meta name="description" content="IDK.S — Five hyper-polished micro games. No ads. Just play.">
+<meta name="description" content="IDK.S — Nine hyper-polished micro games. No ads. Just play.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
@@ -24,7 +24,7 @@
     <a class="logo" href="#">
       <span class="logo-mark">◐</span>
       <span class="logo-type">IDK<span>.S</span></span>
-      <span class="logo-badge">ARCADE v2.1</span>
+      <span class="logo-badge">ARCADE v2.2</span>
     </a>
     <div class="nav-links">
       <a href="#games">Games</a>
@@ -56,14 +56,14 @@
         <span class="line line-2">RE<span class="accent">BORN</span></span>
         <span class="line line-3 stroke">IDK.S</span>
       </h1>
-      <p class="hero-sub">We didn't know what to build. So we built a game site.<br>Five obsessively polished micro-games. Keyboard, mouse or thumb. Your high score lives in your browser forever.</p>
+      <p class="hero-sub">We didn't know what to build. So we built a game site.<br>Nine obsessively polished micro-games. Keyboard, mouse or thumb. Your high score lives in your browser forever.</p>
       <div class="hero-cta">
         <a href="#games" class="btn btn-primary btn-lg">ENTER ARCADE <span>↗</span></a>
         <button class="btn btn-ghost btn-lg" id="randomPlay">RANDOM GAME 🎲</button>
       </div>
       <div class="hero-stats">
         <div><strong id="totalPlays">0</strong><span>plays today</span></div>
-        <div><strong>5</strong><span>games</span></div>
+        <div><strong>9</strong><span>games</span></div>
         <div><strong>60 FPS</strong><span>or you don't pay*</span></div>
         <div class="fine">* it's free anyway</div>
       </div>
@@ -107,7 +107,7 @@
 <section id="games" class="games">
   <div class="section-head">
     <h2>CHOOSE YOUR <span>POISON</span></h2>
-    <p>Five games. One leaderboard. All built to be finished in 30 seconds or obsessed over for 30 minutes.</p>
+    <p>Nine games. One leaderboard. All built to be finished in 30 seconds or obsessed over for 30 minutes.</p>
     <div class="filter-row">
       <button class="chip active" data-filter="all">All games</button>
       <button class="chip" data-filter="fast">⚡ Fast</button>
@@ -246,6 +246,108 @@
         <div class="card-controls">A approve • D deny • click docs to highlight</div>
       </div>
     </article>
+
+    <!-- GAME 6 BLOCK BREAKER -->
+    <article class="game-card" data-game="breakout" data-tags="retro fast">
+      <div class="card-media breakout-media">
+        <div class="card-num">06</div>
+        <div class="breakout-preview">
+          <div class="bo-bricks"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <div class="bo-ball"></div>
+          <div class="bo-paddle"></div>
+        </div>
+        <div class="card-glow"></div>
+      </div>
+      <div class="card-body">
+        <div class="card-meta"><span class="tag cyan">BREAKOUT</span><span class="difficulty">▮▮▯▯ CHILL</span></div>
+        <h3>BLOCK BREAKER</h3>
+        <p>Smash every brick. Catch the falling drops — wide paddle, multiball, slow-mo, extra life.</p>
+        <div class="card-stats">
+          <span><b id="hs-breakout">0</b> best</span>
+          <span><b id="plays-breakout">0</b> plays</span>
+          <span>~2–4 min</span>
+        </div>
+        <button class="btn btn-primary btn-block" data-play="breakout">PLAY BLOCK BREAKER →</button>
+        <div class="card-controls">← → / A D or MOUSE • SPACE launch</div>
+      </div>
+    </article>
+
+    <!-- GAME 7 VECTOR STORM -->
+    <article class="game-card" data-game="vector" data-tags="retro chaos">
+      <div class="card-media vector-media">
+        <div class="card-num">07</div>
+        <div class="vector-preview">
+          <div class="vp-ship">▲</div>
+          <div class="vp-rock r1"></div>
+          <div class="vp-rock r2"></div>
+          <div class="vp-rock r3"></div>
+        </div>
+        <div class="badge badge-retro">▦ VECTORS</div>
+        <div class="card-glow"></div>
+      </div>
+      <div class="card-body">
+        <div class="card-meta"><span class="tag purple">ASTEROIDS</span><span class="difficulty">▮▮▮▮ BRUTAL</span></div>
+        <h3>VECTOR STORM</h3>
+        <p>Thrust, rotate, shoot. Rocks split into smaller rocks. Nothing stops drifting, least of all you.</p>
+        <div class="card-stats">
+          <span><b id="hs-vector">0</b> best</span>
+          <span><b id="plays-vector">0</b> plays</span>
+          <span>~3–6 min</span>
+        </div>
+        <button class="btn btn-primary btn-block" data-play="vector">PLAY VECTOR STORM →</button>
+        <div class="card-controls">← → turn • ↑ thrust • SPACE fire</div>
+      </div>
+    </article>
+
+    <!-- GAME 8 MERGE -->
+    <article class="game-card featured" data-game="merge" data-tags="focus">
+      <div class="card-media merge-media">
+        <div class="card-num">08</div>
+        <div class="merge-preview">
+          <div class="m-tile t2">2</div>
+          <div class="m-tile t4">4</div>
+          <div class="m-tile t8">8</div>
+          <div class="m-tile t16">16</div>
+        </div>
+        <div class="badge">🧠 ONE MORE GO</div>
+        <div class="card-glow"></div>
+      </div>
+      <div class="card-body">
+        <div class="card-meta"><span class="tag yellow">PUZZLE</span><span class="difficulty">▮▮▮▯ DEEP</span></div>
+        <h3>MERGE // 2048</h3>
+        <p>Slide the grid. Equal tiles double. Get to 2048 before the board locks up for good.</p>
+        <div class="card-stats">
+          <span><b id="hs-merge">0</b> best</span>
+          <span><b id="plays-merge">0</b> plays</span>
+          <span>~5–15 min</span>
+        </div>
+        <button class="btn btn-primary btn-block" data-play="merge">PLAY MERGE // 2048 →</button>
+        <div class="card-controls">ARROWS / WASD • SWIPE on touch</div>
+      </div>
+    </article>
+
+    <!-- GAME 9 CIPHER FLASH -->
+    <article class="game-card" data-game="cipher" data-tags="focus fast">
+      <div class="card-media cipher-media">
+        <div class="card-num">09</div>
+        <div class="cipher-preview">
+          <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+        </div>
+        <div class="card-glow"></div>
+      </div>
+      <div class="card-body">
+        <div class="card-meta"><span class="tag green">MEMORY</span><span class="difficulty">▮▮▯▯ TWITCHY</span></div>
+        <h3>CIPHER FLASH</h3>
+        <p>Nine pads, one pattern, growing every round. Watch, wait, repeat it. Three misses and you're out.</p>
+        <div class="card-stats">
+          <span><b id="hs-cipher">0</b> best</span>
+          <span><b id="plays-cipher">0</b> plays</span>
+          <span>~1–3 min</span>
+        </div>
+        <button class="btn btn-primary btn-block" data-play="cipher">PLAY CIPHER FLASH →</button>
+        <div class="card-controls">CLICK / TAP pads • KEYS 1–9</div>
+      </div>
+    </article>
   </div>
 </section>
 
@@ -260,7 +362,7 @@
       <p>All scores saved locally. No servers. No cheating (except your friends on your laptop). New games auto-migrate your old saves.</p>
       <button class="btn btn-ghost btn-sm" id="clearScores">Clear all scores</button>
     </div>
-    <div class="lb-grid lb-grid-5">
+    <div class="lb-grid lb-grid-9">
       <div class="lb-card">
         <h4>🐍 NEON SERPENT</h4>
         <ol id="lb-snake"><li class="empty">No scores yet</li></ol>
@@ -281,6 +383,22 @@
         <h4>✦ PAPERS, PLEASE</h4>
         <ol id="lb-papers"><li class="empty">No scores yet</li></ol>
       </div>
+      <div class="lb-card">
+        <h4>🧱 BLOCK BREAKER</h4>
+        <ol id="lb-breakout"><li class="empty">No scores yet</li></ol>
+      </div>
+      <div class="lb-card">
+        <h4>☄ VECTOR STORM</h4>
+        <ol id="lb-vector"><li class="empty">No scores yet</li></ol>
+      </div>
+      <div class="lb-card">
+        <h4>🔢 MERGE // 2048</h4>
+        <ol id="lb-merge"><li class="empty">No scores yet</li></ol>
+      </div>
+      <div class="lb-card">
+        <h4>🧠 CIPHER FLASH</h4>
+        <ol id="lb-cipher"><li class="empty">No scores yet</li></ol>
+      </div>
     </div>
   </div>
 </section>
@@ -290,12 +408,13 @@
     <div class="about-text">
       <h2>WHAT IS IDK.S?</h2>
       <p>It was literally called <code>-idk.s</code> because we didn't know what to put there. So we made the most fun “idk” on the internet.</p>
-      <p>Five games, one page, zero backend. Runs at 60fps, works offline after first load, respects <code>prefers-reduced-motion</code>.</p>
+      <p>Nine games, one page, zero backend. Runs at 60fps, works offline after first load, respects <code>prefers-reduced-motion</code>.</p>
       <ul class="about-list">
         <li>⚡ Zero dependencies, pure vanilla JS + Canvas</li>
         <li>🎮 Built for keyboard, mouse, and touch</li>
         <li>🔊 Web Audio bleeps (toggle ♪)</li>
         <li>🏆 Daggerfall is real raycasting. Papers is real bureaucracy.</li>
+        <li>🧱 Breakout, Vector Storm, Merge and Cipher Flash joined in v2.2</li>
       </ul>
     </div>
     <div class="about-card">
@@ -445,6 +564,59 @@
           <p>Glory to Arstotzka. Check documents. Approve valid, deny invalid. 75 seconds per shift. 3 wrong = shift over.</p>
           <button class="btn btn-primary btn-lg" data-start="papers">START SHIFT →</button>
           <span class="hint">A approve • D deny • Click fields to highlight mismatches</span>
+        </div>
+      </div>
+
+      <!-- BLOCK BREAKER -->
+      <div class="game-view" id="view-breakout">
+        <canvas id="canvas-breakout" width="480" height="640"></canvas>
+        <div class="overlay" id="overlay-breakout">
+          <h3>BLOCK BREAKER</h3>
+          <p>Clear every brick. Catch the drops. Three balls and you're done.</p>
+          <button class="btn btn-primary btn-lg" data-start="breakout">START GAME →</button>
+          <span class="hint">← → / A D or MOVE THE MOUSE to slide • SPACE / TAP to launch</span>
+        </div>
+        <div class="touch-hint">DRAG TO MOVE • TAP TO LAUNCH</div>
+      </div>
+
+      <!-- VECTOR STORM -->
+      <div class="game-view" id="view-vector">
+        <canvas id="canvas-vector" width="520" height="560"></canvas>
+        <div class="overlay" id="overlay-vector">
+          <h3>VECTOR STORM</h3>
+          <p>Pure inertia. Break rocks into smaller rocks. Waves never stop coming.</p>
+          <button class="btn btn-primary btn-lg" data-start="vector">LAUNCH SHIP →</button>
+          <span class="hint">← → / A D turn • ↑ / W thrust • SPACE fire</span>
+        </div>
+        <div class="touch-controls vector-touch">
+          <div class="vpad">
+            <button data-v="left">◀</button>
+            <button data-v="right">▶</button>
+            <button data-v="thrust">▲</button>
+            <button data-v="fire">◉</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- MERGE // 2048 -->
+      <div class="game-view" id="view-merge">
+        <canvas id="canvas-merge" width="480" height="560"></canvas>
+        <div class="overlay" id="overlay-merge">
+          <h3>MERGE // 2048</h3>
+          <p>Slide the grid. Equal tiles double. Reach 2048 before the board locks.</p>
+          <button class="btn btn-primary btn-lg" data-start="merge">START MERGING →</button>
+          <span class="hint">ARROWS / WASD or SWIPE the board</span>
+        </div>
+      </div>
+
+      <!-- CIPHER FLASH -->
+      <div class="game-view" id="view-cipher">
+        <canvas id="canvas-cipher" width="480" height="520"></canvas>
+        <div class="overlay" id="overlay-cipher">
+          <h3>CIPHER FLASH</h3>
+          <p>Watch the pads, then repeat the pattern. It grows every round. Three misses and it's over.</p>
+          <button class="btn btn-primary btn-lg" data-start="cipher">START FLASH →</button>
+          <span class="hint">CLICK / TAP the pads or press 1–9</span>
         </div>
       </div>
 
